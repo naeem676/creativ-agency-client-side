@@ -1,0 +1,4 @@
+.header{
+    background-image: linear-gradient(to right, gold, gold, gold);
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+}
