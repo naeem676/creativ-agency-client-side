@@ -25,7 +25,7 @@ function App() {
             const [loggedUser, setLoggedUser] = useState({});
             const [selected, setSelected] = useState({});
   return (
-    <div>
+    <div className="app">
     <UserContext.Provider value={[loggedUser, setLoggedUser]}>
     <ServiceContext.Provider value={[selected, setSelected]}>
     <Router>
@@ -42,21 +42,21 @@ function App() {
         <PrivateRoute path='/order'>
           <OrderPlace></OrderPlace>
         </PrivateRoute>
-        <Route  path='/review'>
+        <PrivateRoute  path='/review'>
         <Review></Review>
-        </Route>
-        <Route  path='/client'>
+        </PrivateRoute>
+        <PrivateRoute  path='/client'>
         <ClientServiceList></ClientServiceList>
-        </Route>
-        <Route  path='/admin'>
+        </PrivateRoute>
+        <PrivateRoute  path='/admin'>
         <AdminServiceList></AdminServiceList>
-        </Route>
-        <Route  path='/addService'>
+        </PrivateRoute>
+        <PrivateRoute  path='/addService'>
         <AddService></AddService>
-        </Route>
-        <Route  path='/makeAdmin'>
+        </PrivateRoute>
+        <PrivateRoute  path='/makeAdmin'>
         <MakeAdmin></MakeAdmin>
-        </Route>
+        </PrivateRoute>
         <Route  path='*'>
         <NoMatch></NoMatch>
         </Route>

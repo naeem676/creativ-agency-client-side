@@ -5,7 +5,7 @@ import AdminSidebar from '../adminSidebar/AdminSidebar';
 import './AddService.css';
 
 const AddService = () => {
-    const [info, setInfo] = useState({});
+    const [info, setInfo] = useState({title:'', description:'', status:'Pending'});
     const [file, setFile] = useState(null)
     const handleBlur = e=>{
         const newInfo = {...info}
@@ -24,6 +24,7 @@ const AddService = () => {
         formData.append('file', file)
         formData.append('title', info.title)
         formData.append('description', info.description)
+        formData.append('status', info.status)
       
         fetch('http://localhost:4000/addService', {
           method: 'POST',

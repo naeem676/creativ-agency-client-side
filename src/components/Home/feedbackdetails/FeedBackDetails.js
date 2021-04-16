@@ -26,9 +26,9 @@ const FeedBackDetails = ({feedback}) => {
         <div className="col-md-3 ml-5 p-2 border border-dark">
         <div className="d-flex">
         <Avatar  src={photo} className={classes.large} />
-            <h4 className=" ml-5">{name}</h4>
+            <h5 className="mt-3 ml-3">{name}</h5>
         </div>
-        <p>{description}</p>
+        <p className="mt-2">{description}</p>
             
         </div>
     );

@@ -45,6 +45,7 @@ const OrderPlace = () => {
         formData.append('details', user.details)
         formData.append('price', user.price)
         formData.append('photo', selected.image.img)
+        formData.append('status', selected.status)
         
       
         fetch('http://localhost:4000/addOrder', {
