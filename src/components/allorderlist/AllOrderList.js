@@ -28,6 +28,24 @@ const AllOrderList = ({orderList}) => {
               
     }
 
+    let style = {color:'', backgroundColor:''}
+    if(select.select === "Pending"){
+        style.color = 'white';
+        style.backgroundColor = 'red';
+    }
+    if(select.select === "Done"){
+        style.color = 'white';
+        style.backgroundColor = 'green';
+    }
+    if(select.select === "On going"){
+        style.color = 'white';
+        style.backgroundColor = 'blue';
+    }
+
+    const pendingStyle = {color:'white', backgroundColor:'red'}
+    const doneStyle = {color:'white', backgroundColor:'green'}
+    const goingStyle = {color:'white', backgroundColor:'blue'}
+
     
     
     return (
@@ -41,10 +59,10 @@ const AllOrderList = ({orderList}) => {
                             <td>{course}</td>
                             <td>{details}</td>
                             <td>
-                                <select onChange={handleChange} onClick={()=>handleId(orderList._id)} value={select.select} >
-                                    <option value="Pending">Pending</option>
-                                    <option value="Done">Done</option>
-                                    <option value="On going">On going</option>
+                                <select onChange={handleChange} style={style} onClick={()=>handleId(orderList._id)} value={select.select} >
+                                    <option style={pendingStyle} value="Pending">Pending</option>
+                                    <option style={doneStyle} value="Done">Done</option>
+                                    <option style={goingStyle} value="On going">On going</option>
                                 </select>
                             </td>
                             </tr>

@@ -5,6 +5,7 @@ import AdminSidebar from '../adminSidebar/AdminSidebar';
 import './AddService.css';
 
 const AddService = () => {
+    
     const [info, setInfo] = useState({title:'', description:'', status:'Pending'});
     const [file, setFile] = useState(null)
     const handleBlur = e=>{
